@@ -36,12 +36,13 @@ pipeline{
                 }
             }
         }
+
         stage('deploy to production environment'){
             steps{
                 timeout(time: 2, unit: 'DAYS') {
-                    input message "Deploy to production: ", submitter: "admin"
+                    input message: 'Deploy to production: ', submitter: 'admin'
                 }
-                bat "xcopy /s/y webapp\\target\\webapp.war D:\\apache-tomcat-test\\webapps"
+                bat "xcopy /s/y webapp\\target\\webapp.war D:\\apache-tomcat-prod\\webapps"
             }
         }
     }
