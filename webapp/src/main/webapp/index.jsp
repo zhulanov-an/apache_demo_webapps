@@ -1,1 +1,1 @@
-Hello, Jenkins!
+Hello, Jenkins v.2!
