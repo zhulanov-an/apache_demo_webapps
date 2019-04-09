@@ -4,6 +4,7 @@ pipeline{
     triggers {
         pollSCM('* * * * *')
     }
+
     stages {
         stage('build'){
             steps{
@@ -12,7 +13,7 @@ pipeline{
             post {
                 success {
                     echo 'Archiving artifact ...'
-                    archiveArtifacts '**/target/*.war'
+                    archiveArtifacts "**/target/*.war"
                 }
             }
         }
